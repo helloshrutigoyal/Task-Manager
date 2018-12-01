@@ -1,0 +1,21 @@
+.app-header, .app-footer
+{
+    font-style: italic;
+    padding: 10px;
+    background-color: aliceblue;
+    width: 100%;
+    position: fixed;
+}
+
+body{
+    overflow-y: hidden; 
+}
+
+.app-footer{
+    bottom: 0;
+}
+
+.app-header
+{
+    top : 0;
+}

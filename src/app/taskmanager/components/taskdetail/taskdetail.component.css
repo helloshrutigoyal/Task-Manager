@@ -1,0 +1,17 @@
+.taskdetail-container
+{
+    position: absolute;
+    top: 60px;
+    bottom: 60px;
+    padding: 10px;
+}
+
+.time-dropdown
+{
+    margin-left: 5px;
+}
+
+.task-control-bar
+{
+    margin-left: 10px;
+}

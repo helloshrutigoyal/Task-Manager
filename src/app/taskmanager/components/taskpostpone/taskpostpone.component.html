@@ -1,0 +1,25 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Postpone Task</h4>
+  <button type="button" class="close pull-right" (click)="onCancel()">
+  </button>
+</div>
+<div class="modal-body">
+  <label>Postpone Task "{{task.title}}" by:</label>
+  <div class="btn-group time-dropdown" dropdown>
+      <button dropdownToggle type="button" class="btn btn-default dropdown-toggle">
+        {{label}} <span class="caret"></span>
+      </button>
+      <ul *dropdownMenu class="dropdown-menu"
+          role="menu">
+        <li role="menuitem" *ngFor="let time of postponeTime">
+          <a class="dropdown-item" (click)="onItemSelect(time)">
+            {{time.label}}
+          </a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="onSave()" [disabled]="!selectedTime">Save</button>
+  <button type="button" class="btn btn-default" (click)="onCancel()">Close</button>
+</div>

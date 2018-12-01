@@ -1,0 +1,74 @@
+.task-summary
+{
+    border : black 1px solid;
+    border-radius: 5px;
+
+    width: 100%;
+    height: 220px;
+}
+
+.task-summary .container 
+{
+    padding: 6px;
+}
+
+.task-summary-heading
+{
+    font-style: italic;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.task-summary-container
+{
+
+}
+
+.task-control-bar
+{
+
+}
+
+.task-title
+{
+
+}
+
+.task-due-date
+{
+    margin-top: 5px;
+}
+
+.task-info
+{
+    width: 100%;
+    text-align: left;
+}
+
+.task-description
+{
+    height: 50px;
+}
+
+.seperator
+{
+    border-width: 0.5px;
+    margin: 0px;
+    border-style: solid;    
+}
+
+.new
+{
+    background-color: #ef6262;
+}
+
+.postponed
+{
+    background-color: #fff27d;
+}
+
+.resolved
+{
+    background-color: #83da83;
+}
+

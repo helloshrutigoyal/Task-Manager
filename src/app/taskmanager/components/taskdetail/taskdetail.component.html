@@ -1,0 +1,62 @@
+<div class="taskdetail-container" *ngIf="task">
+  <h2>{{task.title}}</h2>
+  <div>
+    <span class="bold">Due Date: </span>
+    <label>{{task.formattedDueDate}}</label>
+  </div>
+  <div>
+    <span class="bold">Description: </span>
+    <label>{{task.description}}</label>
+  </div>
+  <div>
+    <span class="bold">Priority: </span>
+    <label>{{task.priority}}</label>
+  </div>  
+  <div>
+    <span class="bold">Status: </span>
+    <label>{{task.formattedTaskStatus}}</label>
+  </div> 
+  <div>
+    <span class="bold">Created At: </span>
+    <label>{{task.formattedCreatedDate}}</label>
+  </div> 
+  <div>
+    <span class="bold">Updated At: </span>
+    <label>{{task.formattedUpdatedDate}}</label>
+  </div> 
+  <div *ngIf="task.isPostponed">
+    <span class="bold">Postponed By (in minutes): </span>
+    <label>{{task.postponedTime}}</label>
+  </div> 
+  <div *ngIf="task.isPostponed">
+    <span class="bold">Postponed At: </span>
+    <label>{{task.formattedPostponedDate}}</label>
+  </div>  
+  <div *ngIf="task.isResolved">
+    <span class="bold">Resolved At: </span>
+    <label>{{task.formattedResolvedDate}}</label>
+  </div>  
+  <div *ngIf="!task.isResolved" class="">
+    <label class="bold">Postpone By: </label>
+    <div class="btn-group time-dropdown" dropdown>
+      <button dropdownToggle type="button" class="btn btn-default dropdown-toggle">
+        {{label}} <span class="caret"></span>
+      </button>
+      <ul *dropdownMenu class="dropdown-menu"
+          role="menu">
+        <li role="menuitem" *ngFor="let time of postponeTime">
+          <a class="dropdown-item" (click)="onItemSelect(time)">
+            {{time.label}}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <button class="task-control-bar btn" (click)="doPostpone()" [disabled]="!this.selectedTime">Postpone</button>
+    <button class="task-control-bar btn" (click)="doResolve()">Resolve</button>
+  </div>
+
+  <button (click)="goBack()">Go back</button>
+</div>
+<div *ngIf="!task">
+  <label>Task not found</label>
+</div>

@@ -1,0 +1,11 @@
+<div class="task-manager-home">
+  <div class="tasks-container">
+      <div *ngFor="let task of tasks">
+        <app-tasksummary [task]="task"
+                         (statusChange)="statusChangeHandler($event)"
+                         (headerClick)="headerClickHandler($event)"
+                        >
+        </app-tasksummary>
+      </div>
+  </div>
+</div>

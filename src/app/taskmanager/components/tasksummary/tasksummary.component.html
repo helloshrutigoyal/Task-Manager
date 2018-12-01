@@ -1,0 +1,37 @@
+<div class="task-summary">
+  <div class="container task-summary-heading" 
+      [class.new]="task.isNew"
+      [class.postponed]="task.isPostponed"
+      [class.resolved]="task.isResolved"
+      (click)="onTitleClick()">
+    <div class="task-info task-title">
+      {{task.title}}
+    </div> 
+    <div class="task-info task-due-date"> 
+        {{task.formattedDueDate}}
+    </div>   
+  </div>
+  <hr class="seperator"/>
+  <div class="container task-summary-container">
+    <div class="task-info task-description">
+      {{task.description}}
+    </div>
+    <div class="task-info">
+      {{task.status}}
+    </div>
+    <div class="task-info">
+        {{task.priority}}
+    </div>
+  </div>
+  <hr class="seperator"/>
+  <div class="container task-control-bar">
+    <button class="pull-left"
+            (click)="doPostpone()">
+            Postpone
+    </button>
+    <button class="pull-right"
+            (click)="doResolve()">
+            Resolve
+    </button>
+  </div>
+</div>
